@@ -118,7 +118,7 @@ public class PaddleController : MonoBehaviour
                         {
                             lastAngle_ = 0;
                         }
-                        else if (absX < 0.3) //Player can't rotate with minimun movement in x
+                        else if (absX < 0.15) //Player can't rotate with minimun movement in x
                         {
                             lastAngle_ = 0;
                         }
