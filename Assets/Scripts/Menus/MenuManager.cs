@@ -5,7 +5,7 @@ using UnityEngine;
 public static class MenuManager 
 {
     public static bool IsInitialised { get; private set; }
-    public static GameObject mainMenu, searchMenu, privateMenu, multiplayerMenu;
+    public static GameObject mainMenu, searchMenu, privateMenu, multiplayerMenu, loadingScreen;
     public static void Init()
     {
         GameObject list = GameObject.Find("list");
@@ -13,6 +13,7 @@ public static class MenuManager
         searchMenu = list.transform.Find("searchMenu").gameObject;
         privateMenu = list.transform.Find("privateMenu").gameObject;
         multiplayerMenu = list.transform.Find("multiplayerMenu").gameObject;
+        loadingScreen = list.transform.Find("loadingScreen").gameObject;
     }
 
 
@@ -34,6 +35,9 @@ public static class MenuManager
                 break;
             case Menu.MULTIPLAYER:
                 multiplayerMenu.SetActive(true);
+                break;
+            case Menu.LOADING:
+                loadingScreen.SetActive(true);
                 break;
         }
         callingMenu.SetActive(false);
